@@ -30,7 +30,7 @@ current_means %>%
 
 ### Time trends
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.cap="Average responses for a given day (dot) with 95% confidence intervals (whiskers)"}
 # New facet label names for supp variable
 pd <- position_dodge(0.1) # move them .05 to the left and right
 

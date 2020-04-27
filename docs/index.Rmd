@@ -1,6 +1,6 @@
 ---
 title: "Sierra Leone Covid-19 Dashboard"
-author: "Tracking Economic Consequences and Responses to COVID-19 in Sierra Leone^[Niccolo Meriggi (IGC Sierra Leone), Macartan Humphreys (WZB Berlin and Columbia Univerisity), Abou Bakarr Kamara (IGC Sierra Leone), Madison Levine (Wageningen U),  Mushfiq Mobarak (Yale University), Wilson Prichard (U Toronto), Ashwini Shridhar (Wageningen U), Peter van der Windt (NYU AD), Maarten Voors (Wageningen University). Feedback welcome! Please get in touch via `tracking_covid_sl@gmail.com`]"
+author: "Tracking Economic Consequences and Responses to COVID-19 in Sierra Leone^[Niccolo Meriggi (IGC Sierra Leone), Macartan Humphreys (WZB Berlin and Columbia Univerisity), Abou Bakarr Kamara (IGC Sierra Leone), Madison Levine (Wageningen U),  Mushfiq Mobarak (Yale University), Wilson Prichard (U Toronto), Ashwini Shridhar (Wageningen U), Peter van der Windt (NYU AD), Maarten Voors (Wageningen University). Feedback welcome! Please get in touch via email at tracking.corona.sl@gmail.com.]"
 output: 
   html_document
 ---
