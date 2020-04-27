@@ -6,15 +6,14 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
+knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
 
-### Current means
+### Current averages
 
-```{r}
+```{r, echo = FALSE}
 vars <- measures %>% filter(family == fam & !is.na(variable)) %>% pull(variable)
 var_labs <- measures %>% filter(family == fam & !is.na(variable)) %>% pull(short.label)
 names(var_labs) <- vars
@@ -31,7 +30,7 @@ current_means %>%
 
 ### Time trends
 
-```{r}
+```{r, echo = FALSE}
 # New facet label names for supp variable
 pd <- position_dodge(0.1) # move them .05 to the left and right
 
@@ -53,11 +52,11 @@ pd <- position_dodge(0.1) # move them .05 to the left and right
 
 ```
 
-### Map
+### Maps
 
 Showing most recent data available for each district.
 
-```{r, message = FALSE, warning = FALSE}
+```{r, message = FALSE, warning = FALSE, echo = FALSE}
 
 par(mar=c(0,0,0,0))
 
@@ -73,9 +72,9 @@ ggplot() +
 ```
 
 
-### Variable definitions
+### Definitions of measures
 
-```{r}
+```{r, echo = FALSE}
 
 measures %>% filter(family == fam) %>% select(short.label, description) %>% kable(caption = "Data definitions", col.names = c("Measure", "Definition"))
 
