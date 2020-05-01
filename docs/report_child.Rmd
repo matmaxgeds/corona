@@ -5,11 +5,15 @@ date: "4/26/2020"
 output: html_document
 ---
 
-```{r, include=FALSE}
+```{r, echo = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+
+fam <- families[k]
 
 ```
 
+
+## `r gsub("_", " ", fam)`  {.tabset  .tabset-pills}
 
 ### Current averages
 
@@ -19,8 +23,8 @@ var_labs <- measures %>% filter(family == fam & !is.na(variable)) %>% pull(short
 names(var_labs) <- vars
 
 current_means <- df[, c("id", "date", vars)] %>%
- group_by(id)  %>%
  filter(date == max(date)) %>%
+ group_by(id, date)  %>%
  summarise_all( function(x)  mean(x, na.rm = T)) 
 
 current_means %>% 
@@ -30,7 +34,8 @@ current_means %>%
 
 ### Time trends
 
-```{r, echo = FALSE, fig.cap="Average responses for a given day (dot) with 95% confidence intervals (whiskers)"}
+```{r, echo = FALSE, fig.cap="Average responses for a given day (dot) with 95% confidence intervals (whiskers)", fig.height = length(vars)*2}
+
 # New facet label names for supp variable
 pd <- position_dodge(0.1) # move them .05 to the left and right
 
@@ -74,9 +79,17 @@ ggplot() +
 
 ### Definitions of measures
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 
 measures %>% filter(family == fam) %>% select(short.label, description) %>% kable(caption = "Data definitions", col.names = c("Measure", "Definition"))
 
+
+```
+
+```{r, include = FALSE}
+k <- k+1
+```
+
+```{r, child = "report_child.Rmd", echo = FALSE, eval = k <= n_families}
 
 ```
